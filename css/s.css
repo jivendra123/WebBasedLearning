@@ -1,0 +1,263 @@
+
+.container-fluid .navbar-brand {
+font-family: "Ubuntu", sans-serif;
+font-size: 2em;
+font-weight: bold;
+color: #32968d;
+}
+
+.container-fluid .abc{
+    color: black;
+}
+.custom-nav-item:hover{
+    
+background-color: #32968d;
+border: solid #2e8b83;
+border-radius: 8px;
+}
+.navbar-brand{
+    padding-left: 30px;
+}
+.custom-nav{
+    position: fixed;
+    padding-left: 100px;
+}
+.custom-nav .custom-nav-item a{
+    color: rgba(17, 15, 15, 0.822) !important;
+}
+.remove-vid{
+    margin: 0px;
+    padding: 0px;
+}
+
+.vid{
+    position: relative;
+}
+video{
+    width: 100%;
+    height: 100%;
+}
+.vid-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2e808bb0;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.vid-content{
+   position: absolute;
+   z-index: 2;
+   top: 35%;
+   left: 35%;
+   text-align: center;
+   color: #fff; 
+}
+
+.btn-denger{
+    background-color: #ff512f;
+}
+
+.bottom-banner{
+    color: #fff;
+    padding: 10px;
+}
+
+.container{
+    margin-top: 8%;
+}
+.inner{
+    overflow: hidden;
+}
+.inner img{
+    transition: all 1.5s ease;
+}
+.inner:hover img{
+    transform: scale(1.5);
+}
+
+.form-control{
+    width: 80%;
+    padding: 12px;
+    border-radius: 10px;
+    resize: vertical;
+}
+
+
+.stripe {
+    background-image: linear-gradient(240deg,#2e8b83, #483d8b);
+    padding: 3rem;
+    height: 13rem;
+    margin-top: 4rem;
+    transform: rotate(10deg);
+    z-index: -5;
+}
+
+.testimonial{
+    background: white;
+    text-align: center;
+    padding: 30px 30px 50px;
+    margin: 0 15px 100px;
+    position: relative;
+    margin-top: 12px;
+}
+
+.testimonial::before,
+.testimonial::after{
+    content: "";
+    border-top: 40px solid white;
+    border-right: 125px solid transparent;
+    position: absolute;
+    bottom: -40px;
+    left 0;
+}
+.testimonial::after{
+    border-right: none;
+    border-left: 125px solid transparent;
+    left: 0;
+}
+.testimonial .icon{
+    display: inline-block;
+    font-size: 80px;
+    color:#f28a0b;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.testimonial .description{
+    font-size: 16px;
+    color: #777;
+    text-align: justify;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    letter-spacing: -1px;
+
+}
+
+.testimonial .testimonial-content{
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+.testimonial .pic{
+    display: inline-block;
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 2px #2e8b83;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.testimonial .pic img{
+    width: 100%;
+    height: auto;
+}
+.testimonial .title{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  margin: 0 0 5px 0;
+}
+
+.pic img{
+    width: 100px !important;
+    height: 100px !important;
+}
+
+
+
+
+
+footer {
+    background: rgba(0, 0, 0, 0.815);
+    overflow-x: hidden;
+    padding: 14vmin 18vmin;
+    
+  }
+
+  footer p > span {
+    color: #ff512f;
+  }
+  footer.col-sm{
+      padding: 5px;
+  }
+footer.column i {
+    color: #dd2476;
+  }
+  
+  /* It is Adjacent sibling combinator */
+  
+  footer .column i + i {
+    padding: 0 0.5em;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.815);
+    z-index: 9999;
+    transition: all 1.5s ease;
+  }
+
+.abc{
+    padding-left: 2px;
+}
+
+.social-icon {
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .social-icon li {
+    display: inline-block;
+    list-style: none;
+    margin-bottom: 5px;
+  }
+
+  .social-icon li a {
+    border-radius: 100px;
+    color: #29ca8e;
+    font-size: 15px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    margin: 5px 5px 5px 0;
+  }
+
+  .social-icon li a:hover {
+    background: #29ca8e;
+    color: #ffffff;
+  }
+
+
+
+  
+
+@media screen and (min-width:0px) and (max-width: 600px) {
+    .my-content, .txt-banner {
+        display: none;
+    }
+    .vid-content{
+        top: 12%;
+        left: 60%;
+    }
+    .custom-nav .custom-nav-item a{
+        padding: 10px 20px;
+        background-color:#2e8b83 ;
+    }
+    .custom-nav-item:hover{
+        background-color: none;
+        border: none;
+        border-radius: none;
+    }
+}
