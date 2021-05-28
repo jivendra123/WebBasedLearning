@@ -19,9 +19,9 @@ if(isset($_SESSION['is_admin_login'])){
                   <div class="card-header">Courses</div>
                   <div class="card-body">
                       <h4 class="card-title">
-                          5
+                         6
                       </h4>
-                      <a class="btn text-white" href="#">View</a>
+                      <a class="btn text-white" href="AddCourses.php">View</a>
                   </div>
                 </div>
             </div>
@@ -30,28 +30,22 @@ if(isset($_SESSION['is_admin_login'])){
                   <div class="card-header">Students</div>
                   <div class="card-body">
                       <h4 class="card-title">
-                          25
+                          2
                       </h4>
-                      <a class="btn text-white" href="#">View</a>
+                      <a class="btn text-white" href="students.php">View</a>
                   </div>
                 </div>
             </div>
-            <div calss="col-sm-4 mt-5">
-                <div class="card text-white bg-success mb-3" style="max-width:18rem;">
-                  <div class="card-header">Sold</div>
-                  <div class="card-body">
-                      <h4 class="card-title">
-                          3
-                      </h4>
-                      <a class="btn text-white" href="#">View</a>
-                  </div>
-                </div>
-            </div>   
+        
         </div>
         </div>
         <div class="mx-5 mt-5 text-center">
             <p class="bg-dark text-white p-2">Course Ordered</p>
-            <table class="table">
+              <?php
+              $sql="SELECT * FROM courseorder";
+              $ersult=$conn->query($sql);
+              if($ersult->num_rows > 0){
+           echo ' <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Order ID</th>
@@ -62,19 +56,37 @@ if(isset($_SESSION['is_admin_login'])){
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">22</th>
-                        <td>100</td>
-                        <td>jivendrakumar979@gmail.com</td>
-                        <td>20/01/2021</td>
-                        <td>399</td>
-                        <td><button type="submit" class="btn btn-secondary" name="delete" value="Delete">
+                <tbody>';
+                while($row = $ersult->fetch_assoc()){
+                   echo' <tr>';
+                     echo '<th scope="row">'.$row["order_id"].'</th>';
+                     echo '<td>'.$row["course_id"].'</td>';
+                     echo '<td>'.$row["stu_email"].'</td>';
+                     echo '<td>'.$row["order_date"].'</td>';
+                     echo '<td>'.$row["amount"].'</td>';
+                     echo '<td><form action="" method="POST"
+                     class="d-inline"><input type="hidden" name="id" value='.$row
+                     ["co_id"].'>
+                     <button type="submit" class="btn btn-secondary" name="delete" value="Delete">
                         <i class="fas fa-trash-alt"></i>
-                        </button></td>
-                    </tr>
-                </tbody>
-            </table>
+                        </button></form></td>';
+                    echo '</tr>';
+                }
+               echo '</tbody>
+            </table>';
+            }else {
+                echo "0 Result";
+            }
+            if(isset($_REQUEST['delete'])){
+                $sql="DELETE FROM courseorder WHERE co_id={$_REQUEST
+                    ['id']}";
+                if($conn->query($sql)===TRUE){
+                    echo '<meta http-equiv="refresh" contents= "0;URL=?deletd" />';
+                } else {
+                    echo "Unable to Delete Data";
+                }
+            }       
+        ?>            
         </div>
     </div>
 </div>

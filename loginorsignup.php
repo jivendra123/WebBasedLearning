@@ -7,7 +7,7 @@ include('./header.php');
 <div class="container jumbotron mb-5">
  <div class="row">
   <div class="col-md-4">
-   <h5 class="mb-3">If Already Registered !! Login</h5>
+   <h5 class="mb-3">If Already Registered || Login</h5>
    <form role="form" id="stuLoginForm">
     <div class="form-group">
      <i class="fas fa-envelope"></i><label for="stuLogEmail"
@@ -24,7 +24,7 @@ include('./header.php');
    <small id="statusLogMsg"></small>
   </div>
   <div class="col-md-6 offset-md-1">
-   <h5 class="mb-3">New User !! Sign Up</h5>
+   <h5 class="mb-3">New User || Sign Up</h5>
    <form role="form" id="stuRegForm">
     <div class="form-group">
      <i class="fas fa-user"></i><label for="stuname"
@@ -48,3 +48,9 @@ include('./header.php');
   </div>
  </div>
 </div>
+<hr/>
+
+
+<?php
+include('./footer.php');
+?>
