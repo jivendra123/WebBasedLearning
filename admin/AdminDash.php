@@ -10,6 +10,18 @@ if(isset($_SESSION['is_admin_login'])){
 }else {
     echo "<script> location.href='../index.php';</script>";
 }
+$sql = "SELECT * FROM course";
+$result = $conn->query($sql);
+$totalcourse = $result->num_rows;
+
+$sql = "SELECT * FROM student1";
+$result = $conn->query($sql);
+$totalstu = $result->num_rows;
+
+$sql = "SELECT * FROM courseorder";
+$result = $conn->query($sql);
+$totalsold = $result->num_rows;
+
 ?>
     <div class="col-sm-9 mt-5">
       <div class="row">
@@ -19,7 +31,7 @@ if(isset($_SESSION['is_admin_login'])){
                   <div class="card-header">Courses</div>
                   <div class="card-body">
                       <h4 class="card-title">
-                         6
+                         <?php echo $totalcourse ?>
                       </h4>
                       <a class="btn text-white" href="AddCourses.php">View</a>
                   </div>
@@ -30,7 +42,7 @@ if(isset($_SESSION['is_admin_login'])){
                   <div class="card-header">Students</div>
                   <div class="card-body">
                       <h4 class="card-title">
-                          2
+                      <?php echo $totalstu ?>
                       </h4>
                       <a class="btn text-white" href="students.php">View</a>
                   </div>
@@ -57,8 +69,8 @@ if(isset($_SESSION['is_admin_login'])){
                     </tr>
                 </thead>
                 <tbody>';
-                while($row = $ersult->fetch_assoc()){
-                   echo' <tr>';
+                while($row = $result->fetch_assoc()){
+                     echo '<tr>';
                      echo '<th scope="row">'.$row["order_id"].'</th>';
                      echo '<td>'.$row["course_id"].'</td>';
                      echo '<td>'.$row["stu_email"].'</td>';
